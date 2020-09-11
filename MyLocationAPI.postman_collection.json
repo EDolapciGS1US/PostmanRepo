@@ -1,0 +1,261 @@
+{
+	"info": {
+		"_postman_id": "a1d50bd6-d208-487a-ae6f-9c336e87fceb",
+		"name": "My Location 1st Party API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Post",
+			"item": [
+				{
+					"name": "DRAFT Create a New Location",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "dc2739e3-fe5c-4c0b-bdb3-a83cfd9fe66d",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"pm.test(\"Content-Type is present\", function () {\r",
+									"    pm.response.to.have.header(\"Content-Type\");\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "APIKey",
+								"value": "09fe072791674c03bf6e571b660ccb80",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "",
+								"value": "",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":  \"API Location Test26\",\r\n    \"name2\":  \"Holy Test location\",\r\n    \"parentGln\":  \"0814141000009\",\r\n    \"replacedGln\":  null,\r\n    \"status\":  \"Draft\",\r\n    \"industry\":  \"General\",\r\n    \"roleInSupplyChain\":  \"Undefined\",\r\n    \"address\":  {\r\n                    \"addressLine1\":  \"130 Pinecrest ln\",\r\n                    \"addressLine2\":  \"\",\r\n                    \"addressLine3\":  \"\",\r\n                    \"city\":  \"King of Prussia\",\r\n                    \"state\":  \"Pennsylvania\",\r\n                    \"zip\":  \"19406\",\r\n                    \"country\":  \"US\",\r\n                    \"phone\":  \"85723872389\",\r\n                    \"bypassAddressVerification\":  false\r\n                },\r\n    \"locationTypes\":  [\r\n                          \"Bill To\"\r\n                      ],\r\n    \"conditionalAttributes\":  [\r\n\r\n                              ],\r\n    \"GDSNGLNLocationTypes\":  [\r\n                                 \"Manufacturer GLN\"\r\n                             ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://api.qa.gs1us.org/mylocation/v2/mylocations",
+							"protocol": "https",
+							"host": [
+								"api",
+								"qa",
+								"gs1us",
+								"org"
+							],
+							"path": [
+								"mylocation",
+								"v2",
+								"mylocations"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Get",
+			"item": [
+				{
+					"name": "Search My Locations, Odata Search",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "96f14eac-f650-4c41-a480-a349b57d5f36",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Content-Type is present\", function () {\r",
+									"    pm.response.to.have.header(\"Content-Type\");\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "apikey"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "APiKey",
+								"value": "09fe072791674c03bf6e571b660ccb80",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://api.qa.gs1us.org/mylocation/v2/mylocations/1100097962188",
+							"protocol": "https",
+							"host": [
+								"api",
+								"qa",
+								"gs1us",
+								"org"
+							],
+							"path": [
+								"mylocation",
+								"v2",
+								"mylocations",
+								"1100097962188"
+							],
+							"query": [
+								{
+									"key": "$expand][",
+									"value": null,
+									"disabled": true
+								},
+								{
+									"key": "$orderby][",
+									"value": null,
+									"disabled": true
+								},
+								{
+									"key": "$top][",
+									"value": null,
+									"disabled": true
+								},
+								{
+									"key": "$skip",
+									"value": null,
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "PUT",
+			"item": [
+				{
+					"name": "Update Location",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "ef2fceb1-24b2-4242-ab02-7a77d9b34572",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"pm.test(\"Content-Type is present\", function () {\r",
+									"    pm.response.to.have.header(\"Content-Type\");\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "APiKey",
+								"value": "09fe072791674c03bf6e571b660ccb80",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "",
+								"value": "",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"API Location Test26\",\r\n    \"name2\": \"Holy Test location\",\r\n    \"gln\": \"1100097962188\",\r\n    \"parentGln\": \"0814141000009\",\r\n    \"replacedGln\": null,\r\n    \"status\": \"Draft\",\r\n    \"prefix\": \"\",\r\n    \"prefixString\": null,\r\n    \"industry\": \"General\",\r\n    \"roleInSupplyChain\": \"Undefined\",\r\n    \"address\": {\r\n        \"addressLine1\": \"131 PINECREST LN\",\r\n        \"addressLine2\": \"\",\r\n        \"addressLine3\": \"\",\r\n        \"city\": \"KING OF PRUSSIA\",\r\n        \"state\": \"PA\",\r\n        \"zip\": \"19406-2367\",\r\n        \"country\": \"US\",\r\n        \"phone\": \"85723872389\",\r\n        \"dateUspsVerified\": \"\",\r\n        \"bypassAddressVerification\": false\r\n    },\r\n    \"locationTypes\": [\r\n        \"Bill To\"\r\n    ],\r\n    \"conditionalAttributes\": [],\r\n    \"GDSNGLNLocationTypes\": [\r\n        \"Manufacturer GLN\"\r\n    ]\r\n    \r\n}"
+						},
+						"url": {
+							"raw": "https://api.qa.gs1us.org/mylocation/v2/mylocations",
+							"protocol": "https",
+							"host": [
+								"api",
+								"qa",
+								"gs1us",
+								"org"
+							],
+							"path": [
+								"mylocation",
+								"v2",
+								"mylocations"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "e240e364-e18b-4f67-95b1-85f1915a9c4b",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "402ce136-b736-4828-af45-73b82807f931",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"id": "f286db1b-f0a2-4d99-ac67-f576cb73ef7e",
+			"key": "url",
+			"value": ""
+		}
+	],
+	"protocolProfileBehavior": {}
+}
